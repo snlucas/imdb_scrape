@@ -10,6 +10,7 @@
 body {
     font-family: 'Tilt Neon', cursive, 'Roboto', sans-serif;
     text-align: center;
+    background-color: #181a1b;
 }
 
 h1 {
@@ -17,6 +18,7 @@ h1 {
     margin: 1em auto 1em auto;
     border-bottom: 1px solid #3e3e3e;
     width: 30%;
+    color: #fff;
 }
 
 ol {
@@ -40,6 +42,7 @@ li {
     margin: 0.5em;
     counter-increment: item;
     border-bottom: 2px dashed black;
+    color: #b9b9b9;
 }
 
 li::before {
@@ -52,6 +55,7 @@ li.storm {
     display: inline-block;
     border: 1px solid black;
     padding: .2em;
+    background-color: #3e3e3e;
 }
 
 li.list {
@@ -62,6 +66,12 @@ a {
     text-decoration: none;
     color: inherit;
 }
+/*
+button {
+    background-color: #fbfcfc;
+    color: #425273;
+}
+*/
 
 button {
     color: #3e3e3e;
@@ -105,6 +115,7 @@ button:before {
 button:hover:before {
     background-color: #8e9bb9;
 }
+
 
 @media (min-width: 768px) {
     button {
