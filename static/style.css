@@ -1,0 +1,113 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Tilt Neon', cursive, 'Roboto', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 1em auto 1em auto;
+    border-bottom: 1px solid #3e3e3e;
+    width: 30%;
+}
+
+ol {
+    counter-reset: item;
+    padding: 0;
+    list-style: none;
+}
+
+ol.storm {
+    margin: 5em 0;
+}
+
+ol.list {
+    margin: 5em auto;
+    width: 30%;
+}
+
+li {
+    padding: 0 .5em 0 .5em;
+    font-size: 2em;
+    margin: 0.5em;
+    counter-increment: item;
+    border-bottom: 2px dashed black;
+}
+
+li::before {
+    content: counter(item) ". ";
+    font-weight: bold;
+    margin-right: .5em;
+}
+
+li.storm {
+    display: inline-block;
+    border: 1px solid black;
+    padding: .2em;
+}
+
+li.list {
+    margin-bottom: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    color: #3e3e3e;
+    background-color: transparent;
+    border: 1px solid #3e3e3e;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-right: 1em;
+    padding: 16px 23px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:hover,
+button:active {
+    outline: 0;
+}
+
+button:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:before {
+    background-color: #d2d3d5;
+    content: "";
+    height: calc(100% + 3px);
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    transition: background-color 300ms ease-in;
+    width: 100%;
+    z-index: -1;
+}
+
+button:hover:before {
+    background-color: #8e9bb9;
+}
+
+@media (min-width: 768px) {
+    button {
+        padding: 16px 32px;
+    }
+}
