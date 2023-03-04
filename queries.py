@@ -3,12 +3,28 @@ from scrape import scrape
 import os
 import mysql.connector
 
+
 load_dotenv()
 
 user = os.getenv('DBUSER')
 password = os.getenv('DBPASSWORD')
 host = os.getenv('DBHOST')
 database = os.getenv('DBDATABASE')
+
+
+def create_table():
+    cnx = mysql_conn()
+    cursor = cnx.cursor()
+    create_table_query = """
+        CREATE TABLE IF NOT EXISTS top_movies (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            title VARCHAR(255)
+        )
+    """
+    cursor.execute(create_table_query)
+    cursor.close()
+    cnx.close()
+
 
 def peek():
     cnx = mysql_conn()

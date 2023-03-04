@@ -6,15 +6,6 @@ def scrape(sql_connector):
     cnx = sql_connector
     cursor = cnx.cursor()
 
-    # create table if it doesn't exist
-    create_table_query = """
-        CREATE TABLE IF NOT EXISTS top_movies (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            title VARCHAR(255)
-        )
-    """
-    cursor.execute(create_table_query)
-
     # scrape top movie titles from IMDb
     url = "https://www.imdb.com/search/title/?groups=top_100&sort=user_rating,desc&count=100"
     headers = {

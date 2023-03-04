@@ -3,6 +3,7 @@ import queries
 
 
 app = Flask(__name__)
+queries.create_table()
 
 @app.route('/')
 def show_titles():    
